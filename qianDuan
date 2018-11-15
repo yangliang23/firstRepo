@@ -1,0 +1,22 @@
+layui日期控件动态绑定min/max的值，可以如下：
+
+ let endDate =  laydate.render({
+        elem: '#endTime' //要选择日期的输入框
+        , type: 'datetime',
+        min:$("#startTime").val()
+    });
+    
+    laydate.render({
+        elem: '#startTime' //日期输入框
+		, type: 'datetime',
+		min:$("#maxEndTime").val(),
+        done: function(value, date){ //当选择日期之后触发
+        endDate.config.min ={   
+            year:date.year,
+            month:date.month-1,
+            date: date.date,
+            hours: date.hours,
+            minutes: date.minutes,
+            seconds: date.seconds
+        };
+    }
