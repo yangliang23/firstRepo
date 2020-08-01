@@ -26,3 +26,5 @@ thymeleaf 模板中 可以这样格式化model中带小数点的值：
 th:value="${#numbers.formatDecimal(model.rebatePercent,1,2)}"
 然后格式化日期是：
 th:text="${#dates.format(model.postTime,'yyyy-MM-dd HH:mm:ss')}"
+
+提交了一次代码！
